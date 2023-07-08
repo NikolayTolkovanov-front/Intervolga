@@ -1,0 +1,137 @@
+.modal
+  position: relative
+  background-color: $white
+  padding: 30px
+
+  &__body
+    min-width: 400px
+    display: flex
+    justify-content: center
+
+  &__close
+    position: absolute
+    top: 10px
+    right: 10px
+    width: 15px
+    height: 15px
+    cursor: pointer
+    opacity: 1
+    transition: opacity ease 0.5s
+
+    &:hover
+      opacity: 0.5
+
+  &__close::before,
+  &__close::after
+    content: ''
+    position: absolute
+    top: 10px
+    display: block
+    width: 100%
+    height: 3px
+    background-color: $black
+
+  &__close::before
+    transform: rotate(45deg)
+
+  &__close::after
+    transform: rotate(-45deg)
+
+  &__buttons
+    margin-top: 30px
+    display: flex
+
+  &__buttons-item
+    padding: 15px 30px
+    display: block
+    align-self: start
+    border: 1px solid $black
+    outline: none
+    border-radius: 10px
+    transition: $transition
+
+  .btn-submit
+    background-color: $black
+    color: $white
+
+    &:hover
+      background-color: $white
+      color: $black
+
+  .btn-reset
+    margin-left: 15px
+    position: relative
+    top: 0
+    background-color: $white
+    color: $black
+    box-shadow: 0 4px 0px $black
+    transition: 0.2s
+
+    &:active
+      top: 3px
+      box-shadow: 0 1px 0px $black
+
+.forms
+  width: 100%
+  display: flex
+  flex-direction: column
+  position: relative
+  text-align: center
+
+  &__title
+    font-size: 21px
+    font-weight: 700
+
+  &__form
+    margin-top: 20px
+    text-align: start
+
+  &__form-title
+    margin-bottom: 15px
+    font-weight: 700
+    letter-spacing: 1px
+
+  &__form-item
+    display: flex
+    flex-direction: column
+    margin-bottom: 15px
+
+  &__input-title
+    margin-bottom: 15px
+    align-self: start
+    cursor: pointer
+
+  &__input
+    padding: 15px
+
+  .passport-form
+    display: flex
+    justify-content: space-between
+  
+  .passport-input
+    max-width: 48%
+
+  .form-valid
+    border: 1px solid $green
+
+  .form-invalid
+    border: 1px solid $red
+
+@media screen and ( max-width: 600px )
+  .wrapper
+    width: 100%
+
+  .modal__body
+    min-width: 100%
+
+  .modal__buttons
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+  .modal__buttons-item
+    align-self: center
+
+  .modal .btn-reset
+    margin-left: 0
+    margin-top: 20px
